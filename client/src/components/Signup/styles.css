@@ -1,0 +1,19 @@
+.signIn{
+    margin-left:50%;
+    width: fit-content;
+    color:white;
+    ;
+}
+body {
+    min-height: 100vh;
+    font-weight: 400;
+    font-family: sans-serif;
+    background-image: url('https://blockworks.co/wp-content/uploads/2021/12/metaverse-city.png');
+    background-repeat:no-repeat;
+    background-size: cover;
+  }
+
+  .form.btn.btn.btn-dark.btn-lg.btn-block{
+      width: fit-content;
+      margin-left:15%;;
+  }

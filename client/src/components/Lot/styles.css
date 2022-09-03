@@ -1,0 +1,15 @@
+.lot{
+    height: 40px;
+    width: 40px;
+    background-color: brown;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    flex-direction: column;
+    border: black 1px solid;
+    
+}
+
+.mylot{
+    background-color: orange !important;
+}

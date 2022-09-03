@@ -1,0 +1,55 @@
+
+ .lots-Menu {
+  padding-right: 20px;
+  text-align: center;
+  width: fit-content;
+  color: black;
+  border-radius: 20%;
+  margin-left:50%;
+}
+#root > div > div.header{
+  background-image: url('https://blockworks.co/wp-content/uploads/2021/12/metaverse-city.png');
+  background-repeat:no-repeat;
+  background-size: cover;
+  size-adjust: inherit;
+
+}
+#root > div > div.header > h1{
+  color: rgb(218, 69, 94);
+  padding-left: 49%;
+  font-family: monospace;
+  
+}
+
+
+#root > div > div.header > a.active > div.user{
+  position: top;
+  color: rgb(218, 69, 94);
+  font-family: monospace;
+
+
+}
+#root > div > div.header > a.active > div{
+  position: top;
+  font-size: larger;
+  margin-left:50%;
+}
+
+#root > div > div.header > a.active > div > button{
+  margin-left:10%;
+
+}
+
+#root > div > div.header > a.active > div.lots-Menu > span.nft{
+  background-color: red
+}
+#root > div > div.header > a.active > div.lots-Menu > span.park{
+  background-color: green;
+}
+#root > div > div.header > a.active > div.lots-Menu > span.ownerNfts{
+  background-color: orange;
+}
+#root > div > div.header > a.active > div.lots-Menu > span.road{
+  background-color: gray;
+}
+
