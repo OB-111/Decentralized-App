@@ -5,7 +5,7 @@ after user owns the NFT asset,he can change his price , transfer OwnerShip , add
 
 
 technologics:
-*FrontEnd - React
+*FrontEnd - React ,JS, HTML , CSS
 *BackEnd - NodeJs 
 *Data- MongoDB
 
