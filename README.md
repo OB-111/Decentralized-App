@@ -5,9 +5,9 @@ after user owns the NFT asset,he can change his price , transfer OwnerShip , add
 
 
 technologics:
-*FrontEnd - React ,JS, HTML , CSS
-*BackEnd - NodeJs 
-*Data- MongoDB
+
+* FrontEnd - React ,JS , CSS
+* BackEnd - NodeJs,Express , MongoDB
 
 Run Order:
 Client: Cd client , npm i, npm start
