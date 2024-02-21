@@ -23,7 +23,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -48,6 +47,9 @@
     ]
   },
   "devDependencies": {
-    "@types/react-edit-text": "^4.3.0"
+    "@types/react-edit-text": "^4.3.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1"
   }
 }

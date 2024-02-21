@@ -6,6 +6,7 @@ import Login from "./components/LogIn/";
 import Signup from "./components/Signup";
 
 import axios from "axios";
+import URL from "./assets/API_URL";
 
 function App() {
   const [user, setUser] = useState();
@@ -16,9 +17,7 @@ function App() {
   useEffect(() => {
     if (localStorageUser) {
       axios
-        .get(
-          `http://localhost:9000/users/getspecUser/${localStorageUser.userName}`
-        )
+        .get(`${URL}/users/getspecUser/${localStorageUser.userName}`)
         .then((res) => {
           setUser(res.data);
         });

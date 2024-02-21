@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./styles.css";
+import URL from '../../assets/API_URL'
 
 const Signup = (props) => {
   const [userName, setUserName] = useState("");
@@ -18,7 +19,7 @@ const Signup = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.post(`http://localhost:9000/users/createUser`, {
+    const res = await axios.post(`${URL}/users/createUser`, {
       userName: userName,
       password: password,
       userType: userType,

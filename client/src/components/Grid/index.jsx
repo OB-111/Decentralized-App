@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Model from "../Model";
-
+import URL from '../../assets/API_URL'
 const Grid = (props) => {
   const [lots, setLots] = useState([]);
   const [gridData, setGridData] = useState();
@@ -25,7 +25,7 @@ const Grid = (props) => {
   }, []);
 
   const fetchGridData = async () => {
-    const res = await axios.get("http://localhost:9000/blocks/lots");
+    const res = await axios.get(`${URL}/blocks/lots`);
     setGridData(res.data);
   };
 

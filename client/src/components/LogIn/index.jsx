@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./styles.css";
+import URL from '../../assets/API_URL'
+
 function Login(props) {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState(0);
@@ -20,7 +22,7 @@ function Login(props) {
     // send the username and password to the server
     try {
       const res = await axios.post(
-        `http://localhost:9000/users/loginUser/${userName}`,
+        `${URL}/users/loginUser/${userName}`,
         user_Exicst
       );
       // set the state of the user

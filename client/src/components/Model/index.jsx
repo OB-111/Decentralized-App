@@ -4,6 +4,9 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import "react-edit-text/dist/index.css";
 import styles from './styles.css'
+import URL from '../../assets/API_URL'
+
+
 const MODAL_STYLES = {
   position: "fixed",
   top: "50%",
@@ -40,7 +43,7 @@ const Model = ({ props, open, onClose }) => {
     if (localStorageUser) {
       async function fetch() {
         const res = await axios.get(
-          `http://localhost:9000/users/getspecUser/${localStorageUser.userName}`
+          `${URL}/users/getspecUser/${localStorageUser.userName}`
         );
         setUser(res.data);
       }
@@ -68,7 +71,7 @@ const Model = ({ props, open, onClose }) => {
       alert('must signUp or LogIn Before!')
     }
     else{
-      const toSign = await axios.post("http://localhost:9000/users/signature", {
+      const toSign = await axios.post(`${URL}/users/signature`, {
         data: props.hash,
         privateKey: props.owner.keys.privateKey,
       });
@@ -85,7 +88,7 @@ const Model = ({ props, open, onClose }) => {
   const verifySignature = async () => {
     const privateKey = props.owner.keys.privateKey;
     const publicKey = props.owner.keys.publicKey;
-    const verify = await axios.post("http://localhost:9000/users/verify", {
+    const verify = await axios.post(`${URL}/users/verify`, {
       data: props.hash,
       publicKey: publicKey,
       signature: signature,
@@ -98,13 +101,13 @@ const Model = ({ props, open, onClose }) => {
 
   const updateBuyerAmount = async () => {
     const updatedBuyer = await axios.put(
-      `http://localhost:9000/users/updateUser/${String(user.userName)}`,
+      `${URL}/users/updateUser/${String(user.userName)}`,
       { userName: String(user.userName), amount: user.amount - props.price }
     );
     setUser(updatedBuyer.data.user);
     setDisplayedAmount(updatedBuyer.data.user.amount);
     await axios.put(
-      `http://localhost:9000/users/updateUser/${props.owner.userName}`,
+      `${URL}/users/updateUser/${props.owner.userName}`,
       {
         userName: String(props.owner.userName),
         amount: props.owner.amount + props.price,
@@ -118,7 +121,7 @@ const Model = ({ props, open, onClose }) => {
       alert("There is not enough Money in Your Wallet for purches this Lot!");
     }else{
       const res = await axios.put(
-        `http://localhost:9000/blocks/updateLot/${props.id}`,
+        `${URL}/blocks/updateLot/${props.id}`,
         { id: props.id, price: props.price, owner: user }
       );
       if (res) {
@@ -137,7 +140,7 @@ const Model = ({ props, open, onClose }) => {
   const lotUpdate = async () => {
     //after owner bought the Lot
     const res = await axios.put(
-      `http://localhost:9000/blocks/updateLot/${props.id}`,
+      `${URL}/blocks/updateLot/${props.id}`,
       { id: props.id, ...isForSale && { isForSale}, price: price, description: description }
     );
     await props.fetchGridData();
@@ -161,7 +164,7 @@ const Model = ({ props, open, onClose }) => {
             <br />
             <div>Your Wallet amount: {displayedAmount}$</div>
             <h2>Lot Details:</h2>
-            <label >Block Type: </label>
+            <label   >Block Type: </label>
             {props.blockType}
             <br />
             <label>Owner: </label>
